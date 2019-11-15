@@ -1,0 +1,12 @@
+.DS_Store
+._.DS_Store
+models/checkpoints
+env/
+*.pyc
+__pycache__
+*.pdf
+*.hdf5
+*.txt
+*.pth
+*.net
+*.sh
