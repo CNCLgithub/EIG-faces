@@ -65,4 +65,9 @@ matlab   # start a matlab session
 render   # render
 ```
 
+NOTE on MATLAB: Matlab scripts in this repo are tested in version 2016b and before. If you are using a newer version of MATLAB, you may need to replace the lines where the function `hardcopy` is called with the following. (`hardcopy` is discountined apparently.)
+
+`img = print('-RGBImage');`
+
+
 
