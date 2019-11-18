@@ -12,25 +12,26 @@ You need to obtain the Basel Face Model 2009's data in order to be able to run t
 (3) Finally copy `01_MorphableModel.mat` to this repo, under `EIG-faces/bfm09-generator/bfm_utils/PublicMM1/`.
 
 # Setting up your environment
-(1) You can use `conda` for seting up your environment. First create a new environment with `python=3.6`, activate your new environment, and do the following installations.
+(1) You can use `conda` for seting up your environment. We recommend setting up a fresh environment at the root of this project. First create a new environment with `python=3.6`, activate your new environment, and install a number of packages as shown below.
 
 ```
-conda install -c conda-forge matplotlib            # install matplotlib, the plotting library needed to reproduce figures in the paper
+cd EIG-faces                                       # cd into the root of this directory
+conda create -n env python=3.6                     # create a fresh environment
+conda activate env                                 # activate your environment
+conda install -c conda-forge matplotlib            # install matplotlib
 conda install -c anaconda scipy                    # install scipy
 conda install pytorch torchvision -c pytorch       # install pytorch and torchvision
 conda install -c anaconda configparser             # install configparser
-conda install -c anaconda PIL                      # install PIL image processing library
 conda install h5py                                 # install h5py to process datasets
 conda install -c anaconda pandas                   # install pandas
 conda install -c anaconda scikit-learn             # install scikit-learn
-pip install opencv-contrib-python-headless         # install opencv using pip.
 ```
 
 (2) Update your PYTHONPATH environment variable to include the root of the project.
 ```
 export PYTHONPATH=${PYTHONPATH}:$ROOT
 ```
-where `$ROOT` is an environment variable pointing to the root of this repo.
+where `$ROOT` is the full path to the root of this repo.
 
 (3) Download pretrained weights and our distributed weights. At the root run:
 ```
