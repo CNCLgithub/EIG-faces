@@ -91,6 +91,7 @@ def test(model, outfile):
     attended = []
     for i in range(N):
         fname = filenames[i]
+        print(fname)
 
         v = Image.open(fname)
         image = load_image(v, image_sizes['eig'])
@@ -107,7 +108,7 @@ def test(model, outfile):
     f.create_dataset('latents', data=np.array(latents))
     f.create_dataset('Att', data=np.array(attended))
 
-    asciiList = [n.split('/')[2].encode("ascii", "ignore") for n in filenames]
+    asciiList = [n.split('/')[-1][:-4].encode("ascii", "ignore") for n in filenames]
     f.create_dataset('filenames', (len(asciiList), 1), 'S10', data=asciiList)
     f.close()
 

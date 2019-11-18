@@ -15,13 +15,14 @@ rng shuffle;
 [model, msz] = load_model();
 
 OUTDIR = './output/renderings/'
-filename = './output/infer_output.hdf5';
+inputfile = './output/infer_output.hdf5';
 
-network_features = h5read(filename, '/latents');
+network_features = h5read(inputfile, '/latents');
 network_features = transpose(network_features);
 network_features = network_features/10;
-filenames = h5read(filename, '/filenames');
-attendedfaces = h5read(filename, '/Att');
+filenames = h5read(inputfile, '/filenames');
+
+attendedfaces = h5read(inputfile, '/Att');
 attendedfaces = transpose(attendedfaces);
 
 N = size(network_features);
@@ -52,12 +53,12 @@ for i = 1:N
     %handle = display_face(shape, tex, model.tl, rp, rp.mode_az, rp.mode_el, []);
     img = hardcopy(handle, '-dopengl', '-r300');
     img = imresize(img, [300, 300]);
-    imwrite(img, strcat(OUTDIR, filenames{i}, '_render.png'), 'png');
+    imwrite(img, strcat(OUTDIR, filenames{i}, '_render', '.png'), 'png');
 
     attend = attendedfaces(i, :);
     attend = reshape(attend, 227, 227, 3);
     attend = uint8(attend);
     attend = permute(attend, [2, 1, 3]);
-    imwrite(attend, strcat(OUTDIR, filenames{i}, '_attended.png'), 'png');
+    imwrite(attend, strcat(OUTDIR, filenames{i}, '_attended', '.png'), 'png');
 
 end;
