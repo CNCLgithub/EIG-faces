@@ -3,9 +3,9 @@ Efficiently inverting a probabilistic graphics program with an inference network
 
 # Setting up the BFM'09 model (generative model)
 
-You need to obtain the Basel Face Model 2009's data in order to be able to run the matlab scripts and render new faces. The generative model is controlled via matlab scripts. This repo includes (adapted) versions of BFM09's core matlab scripts under `bfm09-generator/bfm_utils/PublicMM1/matlab`. However, we cannot share the model weights. You need to download them from the official website. 
+You need to obtain the Basel Face Model 2009 (BFM'09). You also need MATLAB as this generative model is controlled via matlab scripts. This repo includes (adapted) versions of the core matlab scripts distributed with BFM'09. These scripts are under `bfm09-generator/bfm_utils/PublicMM1/matlab`. However, we cannot share the mean face model. That is why you need to download them from the official website. 
 
-(1) Go to https://faces.dmi.unibas.ch/bfm/main.php?nav=1-1-0&id=details where you can find a link to the download the BFM09 model at the bottom.
+(1) Go to https://faces.dmi.unibas.ch/bfm/main.php?nav=1-1-0&id=details where you can find a link to the download the BFM'09 model at the bottom.
 
 (2) Request and download the model.
 
