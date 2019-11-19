@@ -52,6 +52,7 @@ for i = 1:N
     handle = display_intrinsics(shape, tex, tl, rp, rp.mode_az, rp.mode_el, 1, mask, 1);
     %handle = display_face(shape, tex, model.tl, rp, rp.mode_az, rp.mode_el, []);
     img = hardcopy(handle, '-dopengl', '-r300');
+    %img = print('-RGBImage'); % if you are using matlab versions newer than 2016b.
     img = imresize(img, [300, 300]);
     imwrite(img, strcat(OUTDIR, filenames{i}, '_render', '.png'), 'png');
 

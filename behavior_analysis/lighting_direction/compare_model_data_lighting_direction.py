@@ -28,7 +28,7 @@ def normalize_each_worker(df):
 
 def main():
     parser = argparse.ArgumentParser(description='Compare models and data on lighting direction judgments')
-    parser.add_argument('inputfile', type=str, help='This script requires the txt filef containing the predicted depths from a  model. See test.py to obtain such predictions from models.')
+    parser.add_argument('inputfile', type=str, help='This script requires the hdf5 file. See test.py to obtain such predictions from models.')
 
     global args
     args = parser.parse_args()
