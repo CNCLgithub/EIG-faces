@@ -22,7 +22,7 @@ And to run with the initial segmentation step.
 python test.py eig_classifier bfm --segment                    # run the EIG network on the FIV-S stimuli with the initial segmentation step
 ```
 
-You can generate RSA matrices, do linear-decomposition analysis, and performn quantitative comparisons to neural data using
+You can generate RSA matrices, do linear-decomposition analysis, and perform quantitative comparisons to neural data using
 
 ```
 python compare_neurons_models.py eig_classifier_bfm.hdf5 bfm
