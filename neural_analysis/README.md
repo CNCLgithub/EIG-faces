@@ -12,5 +12,18 @@ python test.py eig_classifier fiv --segment                    # run the finetun
 python compare_neurons_models.py eig_classifier_fiv.hdf5 fiv   # compare neural data and model predictions.
 ```
 
+To test on the FIV-S imageset (synthetic counterpart of the FIV images), you can use the following to run the network without the initial segmentation step.
+```
+python test.py eig_classifier bfm                              # run the EIG network on the FIV-S stimuli without the initial segmentation step
+```
 
+And to run with the initial segmentation step.
+```
+python test.py eig_classifier bfm --segment                    # run the EIG network on the FIV-S stimuli with the initial segmentation step
+```
 
+You can generate RSA matrices, do linear-decomposition analysis, and performn quantitative comparisons to neural data using
+
+```
+python compare_neurons_models.py eig_classifier_bfm.hdf5 bfm
+```
