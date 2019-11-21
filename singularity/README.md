@@ -14,8 +14,9 @@ sudo singularity build  sing.img singularity.recipe
 ```
 singularity shell -B /local/EIG-faces:/EIG-faces --nv sing.img
 ```
-(4) Activate conda environment
+(4) Activate conda environment and change to directory for EIG
 ```
 . activate env  
+cd /EIG-faces/
 ```
 (5) Proceed with step 3 of the original setup
