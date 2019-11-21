@@ -1,0 +1,39 @@
+Bootstrap: docker
+From: ubuntu:18.04
+
+%post
+	mkdir /local/
+	cd /local/
+
+	apt-get update 
+
+	apt-get -y --force-yes install vim wget bzip2
+
+	# install anaconda
+	# PREFIX=/opt/anaconda3
+	wget https://repo.anaconda.com/archive/Anaconda2-2019.10-Linux-x86_64.sh
+	bash ./Anaconda2-2019.10-Linux-x86_64.sh -b -p /opt/anaconda3
+	export PATH=$PATH:/opt/anaconda3/bin
+
+
+	mkdir /EIG-faces/
+	cd /EIG-faces/          
+	conda create -n env python=3.6                            # create a fresh environment
+	
+	conda install -n env -c conda-forge matplotlib -y         # install matplotlib
+	conda install -n env -c anaconda scipy -y                 # install scipy
+	conda install -n env pytorch torchvision -c pytorch -y    # install pytorch and torchvision
+	conda install -n env -c anaconda configparser -y          # install configparser
+	conda install -n env h5py -y                              # install h5py to process datasets
+	conda install -n env -c anaconda pandas  -y               # install pandas
+	conda install -n env -c anaconda scikit-learn -y          # install scikit-learn
+
+%environment
+	export PATH=$PATH:/opt/anaconda3/bin
+	export PYTHONPATH=${PYTHONPATH}:/EIG-faces/
+
+%runscript
+	exec echo "Loading Environment"
+	exec . activate env  
+
+	
