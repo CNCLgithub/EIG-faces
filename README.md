@@ -41,9 +41,9 @@ chmod +x download_network_weights.sh
 
 (4) Adjust `default.conf` to your needs by copying it to `user.conf` and editing its contents. It contains paths to checkpoints, stimuli, etc. under `[PATHS]`.
 
-# Setting up your environment (Alternative 1: Singularity)
+# Setting up your environment (Alternative 2: Singularity)
 
-If you would like to instead setup your environment using a container, then follow the instructions under `EIG-faces/singularity/README.md`.
+If you would like to instead setup your environment using a singularity container, then follow the instructions under `EIG-faces/singularity/README.md`.
 
 # Infer and render using EIG
 
