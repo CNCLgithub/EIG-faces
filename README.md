@@ -11,7 +11,7 @@ You need to obtain the Basel Face Model 2009 (BFM'09). You also need MATLAB as t
 
 (3) Finally copy `01_MorphableModel.mat` to this repo, under `EIG-faces/bfm09-generator/bfm_utils/PublicMM1/`.
 
-# Setting up your environment
+# Setting up your environment (Alternative 1: Conda)
 (1) You can use `conda` for seting up your environment. We recommend setting up a fresh environment at the root of this project. First create a new environment with `python=3.6`, activate your new environment, and install a number of packages as shown below.
 
 ```
@@ -40,6 +40,10 @@ chmod +x download_network_weights.sh
 ```
 
 (4) Adjust `default.conf` to your needs by copying it to `user.conf` and editing its contents. It contains paths to checkpoints, stimuli, etc. under `[PATHS]`.
+
+# Setting up your environment (Alternative 1: Singularity)
+
+If you would like to instead setup your environment using a container, then follow the instructions under `EIG-faces/singularity/README.md`.
 
 # Infer and render using EIG
 
