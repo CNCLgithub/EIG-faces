@@ -7,7 +7,7 @@ Using singularity replaces the installation of the conda environment.
 (1) Install singularity
 (2) Build container
 ```
-sudo singularity build  sing.img /singularity.recipe
+sudo singularity build  sing.img singularity.recipe
 ```
 (3) Run container (gives you an interactive shell within the singularity container). The EIG-faces data and code is stored outside of the container at /local/EIG-faces on the host machine
 ```
