@@ -5,6 +5,7 @@ This is providing a singularity recipe file to build a singularity container to 
 Using singularity replaces the installation of the conda environment.
 
 (1) Install singularity
+
 (2) Build container
 ```
 sudo singularity build  sing.img singularity.recipe
