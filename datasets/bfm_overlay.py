@@ -114,11 +114,15 @@ class BFMOverlay:
         """
         bg = copy.deepcopy(background)
         fg = copy.deepcopy(foreground)
+        # revert fg back for the overlay function
+        fg = np.moveaxis(fg, 0, 2)
+        fg = Image.fromarray(fg.astype(np.uint8))
+
 
         if self.scale == True:
             fg = self.random_resize(fg)
 
-        fg_bw = fg.convert(mode = '1')
+        #fg_bw = fg.convert(mode = '1')
 
         inds = np.mean(np.asarray(fg), axis = 2)
         mask = np.zeros(inds.shape)
