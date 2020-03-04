@@ -73,5 +73,9 @@ NOTE on MATLAB: Matlab scripts in this repo are tested in version 2016b and befo
 
 `img = print('-RGBImage');`
 
+# Citation
+
+Yildirim, I., Belledonne, M., Freiwald, W., Tenenbaum J. (2020.) Efficient inverse graphics in biological face processing. _Science Advances Vol. 6, no. 10._
+
 
 
