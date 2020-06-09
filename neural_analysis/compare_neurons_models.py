@@ -64,13 +64,13 @@ def main():
     ### Load neural data and RSA matrices. Compute the RSA matrices if they are not found.
     """
     patches = ['MLMF', 'AL', 'AM']
-    neural_vecs = load_data.load_neural_data()
     if not os.path.exists('./output'):
         os.mkdir('./output')
     neural_rsa_file_path = './output/data_similarity.p'
     try:
         data_similarity = pickle.load(open(neural_rsa_file_path, 'rb'))
     except:
+        neural_vecs = load_data.load_neural_data()
         data_similarity = load_data.compute_similarity(neural_vecs, patches)
         pickle.dump(data_similarity, open(neural_rsa_file_path, 'wb'))
 
